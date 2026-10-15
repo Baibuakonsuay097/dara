@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baibua's World ♡ | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt & Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Mali:ital,wght@0,400;0,600;0,700;1,400&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sanrio: {
+                            pink: '#FFB6C1',
+                            lightpink: '#FFF0F5',
+                            deeppink: '#FF69B4',
+                            purple: '#E6E6FA',
+                            yellow: '#FFFACD',
+                            mint: '#E0F8E7',
+                            softblue: '#E0EEEE',
+                            text: '#6A4C5B'
+                        }
+                    },
+                    fontFamily: {
+                        mali: ['Mali', 'cursive', 'Prompt', 'sans-serif'],
+                        fredoka: ['Fredoka', 'Prompt', 'sans-serif'],
+                        prompt: ['Prompt', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2.5s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(0.8)' },
+                            '50%': { opacity: '1', transform: 'scale(1.2)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', 'Mali', sans-serif;
+            background-color: #FFF0F5;
+            color: #5C3D4E;
+            background-image: radial-gradient(#FFB6C1 1.5px, transparent 1.5px), radial-gradient(#FFB6C1 1.5px, #FFF0F5 1.5px);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+        .sanrio-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 3px solid #FFB6C1;
+            box-shadow: 0 10px 25px -5px rgba(255, 182, 193, 0.5), 0 8px 10px -6px rgba(255, 105, 180, 0.2);
+            border-radius: 28px;
+        }
+        .sanrio-badge {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+        }
+        .sanrio-title {
+            font-family: 'Mali', cursive;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB6C1;
+            border-radius: 10px;
+            border: 3px solid #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF69B4;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-700 flex flex-col justify-between selection:bg-pink-300 selection:text-pink-900">
+
+    <!-- Floating Background Decor Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-10 left-5 text-4xl animate-float opacity-70">🌸</div>
+        <div class="absolute top-40 right-10 text-5xl animate-bounce-slow opacity-70">🎀</div>
+        <div class="absolute top-1/3 left-8 text-3xl animate-pulse-slow opacity-60">✨</div>
+        <div class="absolute bottom-1/4 right-8 text-4xl animate-float opacity-70" style="animation-delay: 1s;">🍓</div>
+        <div class="absolute bottom-10 left-12 text-5xl animate-bounce-slow opacity-60" style="animation-delay: 1.5s;">🧸</div>
+        <div class="absolute top-2/3 right-1/4 text-3xl animate-sparkle opacity-80">⭐</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b-4 border-pink-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 text-pink-500 font-bold text-xl md:text-2xl font-mali group">
+                <span class="text-3xl transition-transform group-hover:scale-125">🎀</span>
+                <span>Baibua's Portfolio</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 font-medium text-pink-700">
+                <a href="#about" class="hover:text-pink-500 transition-colors flex items-center gap-1"><span>🐰</span> เกี่ยวกับฉัน</a>
+                <a href="#education" class="hover:text-pink-500 transition-colors flex items-center gap-1"><span>🎓</span> การศึกษา</a>
+                <a href="#experience" class="hover:text-pink-500 transition-colors flex items-center gap-1"><span>🏥</span> ประสบการณ์</a>
+                <a href="#activities" class="hover:text-pink-500 transition-colors flex items-center gap-1"><span>🎈</span> กิจกรรม</a>
+                <a href="#awards" class="hover:text-pink-500 transition-colors flex items-center gap-1"><span>🏆</span> ผลงาน</a>
+                <a href="#contact" class="px-4 py-1.5 bg-pink-400 text-white rounded-full hover:bg-pink-500 transition-all shadow-md">ติดต่อ</a>
+            </nav>
+
+            <!-- Mobile Nav Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl text-pink-500 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-pink-50/95 border-b-2 border-pink-200 px-6 py-4 flex flex-col gap-3 font-mali">
+            <a href="#about" class="mobile-link text-pink-700 font-medium py-1">🐰 เกี่ยวกับฉัน</a>
+            <a href="#education" class="mobile-link text-pink-700 font-medium py-1">🎓 การศึกษา</a>
+            <a href="#experience" class="mobile-link text-pink-700 font-medium py-1">🏥 ประสบการณ์ & จิตอาสา</a>
+            <a href="#activities" class="mobile-link text-pink-700 font-medium py-1">🎈 กิจกรรม & ผู้นำ</a>
+            <a href="#awards" class="mobile-link text-pink-700 font-medium py-1">🏆 รางวัล & เกียรติบัตร</a>
+            <a href="#contact" class="mobile-link text-pink-700 font-medium py-1">💌 ช่องทางการติดต่อ</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-5xl mx-auto px-4 py-8 space-y-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="sanrio-card p-6 md:p-10 relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center gap-8 border-4 border-pink-300">
+            <!-- Ribbon decoration top right -->
+            <div class="absolute -top-4 -right-4 text-6xl animate-wiggle">🎀</div>
+            
+            <!-- Profile Avatar / Image Placeholder -->
+            <div class="relative group">
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-tr from-pink-300 via-purple-200 to-pink-100 p-2 shadow-xl animate-float">
+                    <div class="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center border-4 border-pink-200 relative">
+                        <!-- Placeholder Profile Image with Kawaii Avatar styling -->
+                        <img src="https://placehold.co/400x400/ffb6c1/ffffff?text=Baibua+💖" alt="สุดารัตน์ ฟูกระโทก (ใบบัว)" class="w-full h-full object-cover">
+                        <div class="absolute bottom-2 bg-pink-500 text-white text-xs px-3 py-1 rounded-full shadow-md">
+                            18 Years Old 🎂
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 text-4xl">✨</div>
+            </div>
+
+            <!-- Profile Info Text -->
+            <div class="flex-1 space-y-4">
+                <div class="inline-block px-4 py-1 rounded-full bg-pink-100 border border-pink-300 text-pink-600 text-sm font-semibold font-mali">
+                    🌸 Hello World! Welcome to My Space
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-pink-600 font-mali tracking-wide leading-tight">
+                    นางสาวสุดารัตน์ ฟูกระโทก
+                </h1>
+                <p class="text-xl md:text-2xl font-bold text-purple-600 font-mali flex items-center justify-center md:justify-start gap-2">
+                    <span>ชื่อเล่น : น้องใบบัว</span> 
+                    <span class="text-pink-400">🧸</span>
+                </p>
+                <div class="p-4 bg-white/70 rounded-2xl border-2 border-pink-200 text-gray-700 space-y-2">
+                    <p class="font-medium text-pink-800 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-graduation-cap text-pink-500"></i>
+                        ปัจจุบันศึกษาอยู่ที่: วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        สถาบันพระบรมราชนก • คณะสาธารณสุขศาสตร์บันณิต • สาขาวิชาสาธารณสุขชุมชน
+                    </p>
+                </div>
+                <!-- Quote Banner -->
+                <div class="bg-gradient-to-r from-pink-200 via-purple-100 to-pink-200 p-3 rounded-2xl border border-pink-300 text-center md:text-left shadow-inner">
+                    <p class="text-xs md:text-sm text-pink-700 italic font-mali">
+                        💬 คติประจำใจ: “ความพยายาม คือ หนทางแห่งความสำเร็จ” ✨
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: About Me -->
+        <section id="about" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>🐰</span> ข้อมูลส่วนตัว (About Me) <span>✨</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Profile Card -->
+                <div class="sanrio-card p-6 border-pink-300 space-y-4 hover:shadow-2xl transition-all">
+                    <div class="flex items-center gap-3 border-b-2 border-pink-100 pb-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-600 text-xl font-bold">
+                            🍓
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600 font-mali">ข้อมูลทั่วไป</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm md:text-base">
+                        <li class="flex justify-between border-b border-pink-50 pb-2">
+                            <span class="font-semibold text-pink-500">วันเกิด:</span>
+                            <span class="text-gray-700">13 มิถุนายน พ.ศ. 2550</span>
+                        </li>
+                        <li class="flex justify-between border-b border-pink-50 pb-2">
+                            <span class="font-semibold text-pink-500">อายุ:</span>
+                            <span class="text-gray-700">18 ปี</span>
+                        </li>
+                        <li class="flex justify-between border-b border-pink-50 pb-2">
+                            <span class="font-semibold text-pink-500">ที่อยู่ปัจจุบัน:</span>
+                            <span class="text-gray-700 text-right">95/10 บ้านหัวขัว ต.กุดดู่<br>อ.โนนสัง จ.หนองบัวลำภู</span>
+                        </li>
+                        <li class="pt-2">
+                            <span class="font-semibold text-pink-500 block mb-1">ความสามารถพิเศษ:</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-pink-100 text-pink-700 text-xs px-3 py-1 rounded-full border border-pink-200">🤝 การปรับตัวเข้ากับผู้อื่น</span>
+                                <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full border border-purple-200">⏰ การบริหารจัดการเวลา</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Family & Hobbies Card -->
+                <div class="sanrio-card p-6 border-pink-300 space-y-4 hover:shadow-2xl transition-all">
+                    <div class="flex items-center gap-3 border-b-2 border-pink-100 pb-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center text-purple-600 text-xl font-bold">
+                            🏡
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600 font-mali">ครอบครัว & งานอดิเรก</h3>
+                    </div>
+                    
+                    <!-- Family -->
+                    <div class="bg-pink-50/60 p-3 rounded-2xl space-y-2 border border-pink-100">
+                        <p class="font-semibold text-pink-700 text-sm">👨‍👩‍👧 ข้อมูลครอบครัว:</p>
+                        <div class="text-xs md:text-sm space-y-1 text-gray-600">
+                            <p><b>บิดา:</b> นายปรีชา ฟูกระโทก (เกษตรกร) <a href="tel:0956613328" class="text-pink-500 underline ml-1">📞 095-661-3328</a></p>
+                            <p><b>มารดา:</b> นางสุกัญญา ฟูกระโทก (ค้าขาย) <a href="tel:0966029941" class="text-pink-500 underline ml-1">📞 096-602-9941</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="space-y-2">
+                        <p class="font-semibold text-pink-700 text-sm">🎨 งานอดิเรก (Hobbies):</p>
+                        <div class="grid grid-cols-1 gap-2 text-xs md:text-sm">
+                            <div class="bg-white p-2.5 rounded-xl border border-pink-200 flex items-center gap-2">
+                                <span>🎵</span> ฟังเพลงผ่อนคลาย
+                            </div>
+                            <div class="bg-white p-2.5 rounded-xl border border-pink-200 flex items-center gap-2">
+                                <span>🔍</span> ค้นหาความรู้ใหม่ๆ ให้แก่ตนเอง
+                            </div>
+                            <div class="bg-white p-2.5 rounded-xl border border-pink-200 flex items-center gap-2">
+                                <span>🎧</span> ฟัง Podcast เกี่ยวกับสุขภาพและการพัฒนาตนเอง
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Education -->
+        <section id="education" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>🎓</span> ประวัติการศึกษา (Education) <span>🎀</span>
+                </h2>
+            </div>
+
+            <div class="sanrio-card p-6 md:p-8">
+                <div class="relative border-l-4 border-pink-300 ml-4 md:ml-8 space-y-8 py-2">
+                    
+                    <!-- Higher Ed -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center text-sm border-2 border-white shadow-md">
+                            🏫
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-pink-200 shadow-sm group-hover:border-pink-400 transition-colors">
+                            <span class="inline-block px-3 py-0.5 rounded-full bg-pink-100 text-pink-600 text-xs font-bold mb-1">ปัจจุบัน</span>
+                            <h3 class="text-lg font-bold text-pink-600 font-mali">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h3>
+                            <p class="text-sm text-gray-700 font-medium">สถาบันพระบรมราชนก คณะสาธารณสุขศาสตร์บันณิต</p>
+                            <p class="text-xs text-pink-500 font-semibold mt-1">สาขาวิชาสาธารณสุขชุมชน</p>
+                        </div>
+                    </div>
+
+                    <!-- High School -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-purple-300 text-white flex items-center justify-center text-sm border-2 border-white shadow-md">
+                            📚
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-pink-200 shadow-sm group-hover:border-pink-400 transition-colors">
+                            <div class="flex justify-between items-start flex-wrap gap-2">
+                                <span class="px-3 py-0.5 rounded-full bg-purple-100 text-purple-600 text-xs font-bold">พ.ศ. 2565 - 2568</span>
+                                <span class="px-3 py-0.5 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold border border-yellow-300">⭐ GPAX 5 ภาคเรียน: 3.58</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-pink-600 font-mali mt-1">ระดับมัธยมศึกษาตอนปลาย</h3>
+                            <p class="text-sm text-gray-700">โรงเรียนหนองบัวพิทยาคาร (จบการศึกษาปี พ.ศ. 2568)</p>
+                        </div>
+                    </div>
+
+                    <!-- Junior High School -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-pink-200 text-pink-600 flex items-center justify-center text-sm border-2 border-white shadow-md">
+                            🎒
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-pink-100 shadow-sm">
+                            <span class="px-3 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs font-bold">สำเร็จการศึกษาปี พ.ศ. 2565</span>
+                            <h3 class="text-base font-bold text-pink-600 font-mali mt-1">ระดับมัธยมศึกษาตอนต้น</h3>
+                            <p class="text-sm text-gray-700">โรงเรียนกุดดู่พิทยาคม</p>
+                        </div>
+                    </div>
+
+                    <!-- Primary School -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center text-sm border-2 border-white shadow-md">
+                            ✏️
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-pink-100 shadow-sm">
+                            <span class="px-3 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs font-bold">สำเร็จการศึกษาปี พ.ศ. 2562</span>
+                            <h3 class="text-base font-bold text-pink-600 font-mali mt-1">ระดับประถมศึกษา</h3>
+                            <p class="text-sm text-gray-700">โรงเรียนบุตรเพชรวิทยา</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Volunteer & Medical Experience -->
+        <section id="experience" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>🏥</span> ประสบการณ์ฝึกงาน & จิตอาสา <span>💖</span>
+                </h2>
+                <p class="text-xs md:text-sm text-pink-500 font-mali mt-2">ประสบการณ์ตรงจากการฝึกปฏิบัติงาน ณ โรงพยาบาลและกิจกรรมบริการสังคม</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Hospital Training Card 1 -->
+                <div class="sanrio-card p-5 border-pink-300 flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl shadow-inner">
+                            💊
+                        </div>
+                        <h3 class="text-lg font-bold text-pink-600 font-mali">ฝึกงานห้องยา (OPD & IPD)</h3>
+                        <p class="text-xs font-semibold text-purple-600">โรงพยาบาลโนนสัง</p>
+                        <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
+                            <li>ฝึกปฏิบัติงานวิชาชีพเภสัชกร จัดยาอย่างถูกต้องและรอบคอบ</li>
+                            <li>ออกคลินิกผู้ป่วยโรคเรื้อรัง (เบาหวาน/ความดัน) ร่วมกับแพทย์และพยาบาลทุกวันพุธ-พฤหัสบดี</li>
+                            <li>ร่วมออกตรวจเยี่ยมผู้ป่วยระยะสุดท้าย เรียนรู้การดูแลคุณภาพชีวิตผู้ป่วย</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-pink-100 text-right">
+                        <span class="text-[10px] bg-pink-100 text-pink-600 px-2 py-1 rounded-full font-bold">ฝึกประสบการณ์การแพทย์</span>
+                    </div>
+                </div>
+
+                <!-- Hospital Training Card 2 -->
+                <div class="sanrio-card p-5 border-pink-300 flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-500 flex items-center justify-center text-2xl shadow-inner">
+                            🩺
+                        </div>
+                        <h3 class="text-lg font-bold text-pink-600 font-mali">งานการพยาบาลผู้ป่วย</h3>
+                        <p class="text-xs font-semibold text-purple-600">โรงพยาบาลโนนสัง</p>
+                        <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
+                            <li>ฝึกปฏิบัติงานพยาบาล วัดความดันโลหิตเบื้องต้น</li>
+                            <li>ปูเตียงผู้ป่วย เขียนประวัติผู้ป่วย IPD</li>
+                            <li>ประสานงานและติดต่อรับยาให้ผู้ป่วย</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-pink-100 text-right">
+                        <span class="text-[10px] bg-purple-100 text-purple-600 px-2 py-1 rounded-full font-bold">บริการสุขภาพ</span>
+                    </div>
+                </div>
+
+                <!-- Hospital Training Card 3 -->
+                <div class="sanrio-card p-5 border-pink-300 flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-100 text-yellow-600 flex items-center justify-center text-2xl shadow-inner">
+                            📊
+                        </div>
+                        <h3 class="text-lg font-bold text-pink-600 font-mali">งานการเงินและพัสดุ</h3>
+                        <p class="text-xs font-semibold text-purple-600">โรงพยาบาลโนนสัง</p>
+                        <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
+                            <li>ฝึกประสบการณ์ด้านการจัดการทั่วไป</li>
+                            <li>ตรวจสอบสิทธิ์การรักษาของผู้ป่วย</li>
+                            <li>ตรวจสอบความถูกต้องจัดซื้อจัดจ้าง & เขียนบัญชีรายรับ-รายจ่าย</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-pink-100 text-right">
+                        <span class="text-[10px] bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-bold">การบริหารงาน</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Other Volunteer trainings -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white/80 p-4 rounded-2xl border-2 border-pink-200 flex items-start gap-3">
+                    <span class="text-2xl">🩸</span>
+                    <div>
+                        <h4 class="font-bold text-pink-600 text-sm font-mali">อาสาสมัครบริจาคโลหิต</h4>
+                        <p class="text-xs text-gray-600 mt-1">โครงการ 70 พรรษา 70 ล้านดวงใจ ร่วมกับเหล่ากาชาดหนองบัวลำภู ทำหน้าที่อำนวยความสะดวก เช็ดเลือด และติดพลาสเตอร์ให้ผู้บริจาค</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 p-4 rounded-2xl border-2 border-pink-200 flex items-start gap-3">
+                    <span class="text-2xl">⚡</span>
+                    <div>
+                        <h4 class="font-bold text-pink-600 text-sm font-mali">อบรม CPR & ปฐมพยาบาล</h4>
+                        <p class="text-xs text-gray-600 mt-1">ฝึกปฏิบัติการทำ CPR ช่วยชีวิตขั้นพื้นฐานและการปฐมพยาบาลเบื้องต้นเมื่อได้รับบาดเจ็บ (เช่น ขาหัก)</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 p-4 rounded-2xl border-2 border-pink-200 flex items-start gap-3">
+                    <span class="text-2xl">🗣️</span>
+                    <div>
+                        <h4 class="font-bold text-pink-600 text-sm font-mali">อบรม Ask the Pharmacists</h4>
+                        <p class="text-xs text-gray-600 mt-1">อบรมการซักประวัติผู้ป่วย การอ่านฉลากยา ดูวันหมดอายุ การบดยา และผลข้างเคียงของการใช้ยา</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Leadership & Activities -->
+        <section id="activities" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>👑</span> ความเป็นผู้นำ & กิจกรรม <span>🎈</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Leadership -->
+                <div class="sanrio-card p-6 border-pink-300 space-y-4">
+                    <div class="flex items-center gap-2 text-pink-600 border-b border-pink-200 pb-2">
+                        <span class="text-2xl">🌟</span>
+                        <h3 class="text-xl font-bold font-mali">ประสบการณ์ด้านความเป็นผู้นำ</h3>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="bg-pink-50/70 p-3.5 rounded-2xl border border-pink-200">
+                            <p class="font-bold text-sm text-pink-700 font-mali">🏆 หัวหน้าฝ่ายกีฬาสี ประจำปี 2567</p>
+                            <p class="text-xs text-gray-600 mt-1">สรรหานักกีฬาและบริหารจัดการทีมภายในโรงเรียน จนได้รับ <span class="font-bold text-pink-600">รางวัลชนะเลิศอันดับ 1 ประเภทกรีฑา</span></p>
+                        </div>
+
+                        <div class="bg-purple-50/70 p-3.5 rounded-2xl border border-purple-200">
+                            <p class="font-bold text-sm text-purple-700 font-mali">🎭 ตัวแทนนำเสนอโครงงานวันภาษาไทย</p>
+                            <p class="text-xs text-gray-600 mt-1">แต่งกายเป็น "นางมัทนะพาธา" นำเสนอประวัติความเป็นมาต่อหน้าคณะกรรมการ เสริมสร้างความกล้าแสดงออกและทักษะการสื่อสาร</p>
+                        </div>
+
+                        <div class="bg-yellow-50/70 p-3.5 rounded-2xl border border-yellow-200">
+                            <p class="font-bold text-sm text-yellow-800 font-mali">🎓 อบรมพัฒนาภาวะผู้นำ</p>
+                            <p class="text-xs text-gray-600 mt-1">ผ่านการอบรมหลักการพัฒนาภาวะผู้นำ การเป็นผู้นำและผู้ตามที่ดี ณ คณะวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activities List -->
+                <div class="sanrio-card p-6 border-pink-300 space-y-4">
+                    <div class="flex items-center gap-2 text-pink-600 border-b border-pink-200 pb-2">
+                        <span class="text-2xl">🌷</span>
+                        <h3 class="text-xl font-bold font-mali">กิจกรรมที่เข้าร่วม</h3>
+                    </div>
+
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🚫</span> เดินรณรงค์วันต่อต้านยาเสพติดโลก & วันงดสูบบุหรี่โลก
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🌲</span> กิจกรรมปลูกป่าเพิ่มพื้นที่สีเขียว ณ ค่ายสีหราชเดโชไชย
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🎤</span> ประกวดร้องเพลงลูกทุ่ง ได้รับคะแนนประเมินสูงสุดลำดับที่ 3
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🛵</span> เดินรณรงค์ขับขี่ปลอดภัย ณ มหาวิทยาลัยขอนแก่น
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🪔</span> ถือป้ายขบวนสภาบุญบั้งไฟ & กิจกรรมถวายเทียนพรรษา
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🧬</span> มหกรรมวิทยาศาสตร์สัญจร สกร. หนองบัวลำภู
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-pink-200 flex items-center gap-2">
+                            <span>🏠</span> ค่ายมูลนิธิครอบครัวพอเพียง โรงเรียนหนองบัวพิทยาคาร
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Awards & Certificates -->
+        <section id="awards" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>🏆</span> เกียรติบัตร & รางวัล (Certificates) <span>🏅</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Award Card 1 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl animate-bounce-slow">🥇</div>
+                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">รางวัลชนะเลิศ</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">การประกวดพานไหว้ครู</h3>
+                    <p class="text-xs text-gray-600">ประเภทความคิดสร้างสรรค์ ประจำปีการศึกษา 2567</p>
+                </div>
+
+                <!-- Award Card 2 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl animate-bounce-slow">🧪</div>
+                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">ระดับนานาชาติ</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">International Chemistry Quiz</h3>
+                    <p class="text-xs text-gray-600">ผ่านการสอบวัดความรู้เคมีนานาชาติ ระดับ Intermediate Division</p>
+                </div>
+
+                <!-- Award Card 3 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl animate-bounce-slow">🎗️</div>
+                    <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">ระดับดีเด่น</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">สถานศึกษาสีขาว</h3>
+                    <p class="text-xs text-gray-600">ปลอดยาเสพติดและอบายมุข (กิจกรรมห้องเรียนสีขาว ชั้น ม.4/7)</p>
+                </div>
+
+                <!-- Award Card 4 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl">💃</div>
+                    <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">รางวัลชมเชย</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">การแข่งขันเต้นสาวแหล่บ้านนา</h3>
+                    <p class="text-xs text-gray-600">โครงการพัฒนาทักษะการเรียนรู้ประวัติศาสตร์</p>
+                </div>
+
+                <!-- Award Card 5 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl">🤝</div>
+                    <span class="inline-block px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">เกียรติบัตรผ่านการอบรม</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">เครือข่ายเฝ้าระวังการค้ามนุษย์</h3>
+                    <p class="text-xs text-gray-600">ผ่านการอบรมเครือข่ายเฝ้าระวังปัญหาการค้ามนุษย์ระดับพื้นที่</p>
+                </div>
+
+                <!-- Award Card 6 -->
+                <div class="sanrio-card p-5 border-pink-300 text-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="text-4xl">💐</div>
+                    <span class="inline-block px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">เกียรติบัตรตัวแทน</span>
+                    <h3 class="font-bold text-pink-600 font-mali text-base">ตัวแทนถือพานไหว้ครู</h3>
+                    <p class="text-xs text-gray-600">ได้รับเกียรติเป็นตัวแทนถือพานไหว้ครู ประจำปีการศึกษา 2567 และ 2568</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-pink-600 font-mali inline-flex items-center gap-2 border-b-4 border-pink-300 pb-1">
+                    <span>💌</span> ช่องทางการติดต่อ (Contact Me) <span>📞</span>
+                </h2>
+            </div>
+
+            <div class="sanrio-card p-8 text-center max-w-2xl mx-auto space-y-6 border-pink-400">
+                <p class="text-pink-600 font-mali text-lg">
+                    ยินดีที่ได้รู้จักทุกคนค่ะ สามารถติดต่อสอบถามหรือพูดคุยได้ตามช่องทางนี้เลยนะคะ! 🌸
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" class="flex items-center gap-3 p-3.5 bg-blue-50 border-2 border-blue-200 rounded-2xl hover:bg-blue-100 transition-all text-blue-600 font-medium">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                        <span class="text-xs md:text-sm">Sudarat Fukrathok</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 p-3.5 bg-pink-50 border-2 border-pink-200 rounded-2xl hover:bg-pink-100 transition-all text-pink-600 font-medium">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                        <span class="text-xs md:text-sm">sudxrxt.xz</span>
+                    </a>
+
+                    <!-- Mobile Phone -->
+                    <div onclick="copyText('0611917733')" class="cursor-pointer flex items-center justify-between p-3.5 bg-green-50 border-2 border-green-200 rounded-2xl hover:bg-green-100 transition-all text-green-700 font-medium">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                            <span class="text-xs md:text-sm">061-191-7733</span>
+                        </div>
+                        <span class="text-[10px] bg-green-200 px-2 py-0.5 rounded-md">คลิกเพื่อก๊อป</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div onclick="copyText('bxibuxxz@gmail.com')" class="cursor-pointer flex items-center justify-between p-3.5 bg-purple-50 border-2 border-purple-200 rounded-2xl hover:bg-purple-100 transition-all text-purple-700 font-medium">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                            <span class="text-xs md:text-sm truncate">bxibuxxz@gmail.com</span>
+                        </div>
+                        <span class="text-[10px] bg-purple-200 px-2 py-0.5 rounded-md">คลิกเพื่อก๊อป</span>
+                    </div>
+                </div>
+
+                <!-- Toast Alert Banner -->
+                <div id="toast" class="hidden p-3 bg-pink-500 text-white font-mali text-sm rounded-xl shadow-lg animate-pulse">
+                    ✨ คัดลอกข้อมูลเรียบร้อยแล้วค่ะ!
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-white/80 border-t-4 border-pink-200 py-6 text-center text-xs md:text-sm text-pink-600 font-mali space-y-2">
+        <p>🎀 Created with Love for Sudarat Fukrathok (Baibua) 🎀</p>
+        <p class="text-gray-400">© 2026 Baibua Portfolio • Designed for GitHub Pages</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy Text Function (for Phone and Email)
+        function copyText(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            toast.innerText = `✨ คัดลอก "${text}" เรียบร้อยแล้วค่ะ!`;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
